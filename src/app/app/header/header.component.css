@@ -1,0 +1,29 @@
+header {
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+  background-color: #232d39;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+}
+
+input {
+  font-family: Helvetica;
+  font-weight: 500;
+  font-size: 30px;
+  border-width: 0px;
+  width: 100%;
+  outline: none;
+  color: #bbcdee;
+  background-color: #232d39;
+  padding: 10px 0;
+  transition: color 0.3s ease-out, background-color 0.3s ease-out,
+    box-shadow 0.3s ease-out;
+  overflow-x: hidden;
+  text-align: center;
+  caret-color: #566585;
+}
+
+input::placeholder {
+  font-size: 30px;
+  color: #0b0f14;
+}

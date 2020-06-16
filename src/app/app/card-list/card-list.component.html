@@ -1,0 +1,17 @@
+<div class="container">
+  <div class="cards-list">
+    <app-card-item
+      *ngFor="let card of cardList"
+      [title]="card.longTitle"
+      [backgroundUrl]="card.headerImage"
+      [id]="card.id"
+    ></app-card-item>
+  </div>
+  <mat-paginator
+    [length]="100"
+    [pageSize]="cardsOnPage"
+    [pageSizeOptions]="[5, 10, 20, 100]"
+    (page)="upDatePagination($event)"
+  >
+  </mat-paginator>
+</div>
