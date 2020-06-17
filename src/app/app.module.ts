@@ -12,6 +12,7 @@ import { CardDetailsComponent } from './app/card-details/card-details.component'
 import { FormsModule } from '@angular/forms';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { MatPaginatorModule } from '@angular/material/paginator';
+import { AuthComponent } from './app/auth/auth.component';
 
 @NgModule({
   declarations: [
@@ -21,6 +22,7 @@ import { MatPaginatorModule } from '@angular/material/paginator';
     CardItemComponent,
     PaginationComponent,
     CardDetailsComponent,
+    AuthComponent,
   ],
   imports: [
     BrowserModule,

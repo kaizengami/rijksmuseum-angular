@@ -1,4 +1,8 @@
-<div class="container">
-  <app-header></app-header>
+<div class="container" #appWrapper>
+  <app-auth
+    *ngIf="authVisible"
+    (showLogin)="handleShowLogin($event)"
+  ></app-auth>
+  <app-header (showLogin)="handleShowLogin($event)"></app-header>
   <router-outlet></router-outlet>
 </div>

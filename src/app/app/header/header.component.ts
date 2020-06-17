@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Output, EventEmitter } from '@angular/core';
 import { ActivatedRoute, Router, Params } from '@angular/router';
 
 @Component({
@@ -7,7 +7,9 @@ import { ActivatedRoute, Router, Params } from '@angular/router';
   styleUrls: ['./header.component.css'],
 })
 export class HeaderComponent implements OnInit {
+  @Output() showLogin = new EventEmitter<boolean>();
   search: string = '';
+
   constructor(private route: ActivatedRoute, private router: Router) {}
 
   ngOnInit(): void {
@@ -28,5 +30,9 @@ export class HeaderComponent implements OnInit {
           queryParams: { search: this.search },
           queryParamsHandling: 'merge',
         });
+  }
+
+  handleLogin(): void {
+    this.showLogin.emit(true);
   }
 }

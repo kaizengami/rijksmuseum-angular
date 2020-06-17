@@ -27,3 +27,26 @@ input::placeholder {
   font-size: 30px;
   color: #0b0f14;
 }
+
+header button {
+  position: absolute;
+  right: 0;
+  height: 54px;
+  width: 100px;
+  color: #677e9a;
+  background-color: #232d39;
+  border: none;
+  border-left: 1px solid black;
+  font-size: 16px;
+  letter-spacing: 0.2px;
+  outline: none;
+  cursor: pointer;
+}
+
+header button:hover {
+  color: #52647a;
+}
+
+header button:active {
+  font-size: 15px;
+}

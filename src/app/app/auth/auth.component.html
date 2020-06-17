@@ -1,0 +1,23 @@
+<div class="wrapper" #authWrapper>
+  <form #formDom #formData="ngForm" (ngSubmit)="onSubmit(formData)">
+    <input
+      type="email"
+      placeholder="Email"
+      name="email"
+      id="email"
+      ngModel
+      email
+    />
+    <input
+      type="password"
+      placeholder="Password"
+      name="password"
+      ngModel
+      password
+    />
+    <div class="row">
+      <button type="submit">Login</button>
+      <button type="button" (click)="handleSignup()">Sign up</button>
+    </div>
+  </form>
+</div>
