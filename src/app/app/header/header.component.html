@@ -5,5 +5,15 @@
     [(ngModel)]="search"
     (keyup.enter)="handleSubmit()"
   />
-  <button (click)="handleLogin()">Login</button>
+  <menu>
+    <button class="favorite" [routerLink]="'/favorite'">
+      <mat-icon aria-hidden="false" aria-label="Example home icon"
+        >favorite</mat-icon
+      >
+    </button>
+    <button (click)="isAuthenticated ? handleLogout() : handleLogin()">
+      {{ isAuthenticated ? 'Logout' : 'Login' }}
+    </button>
+  </menu>
 </header>
+<!-- favorite_border -->

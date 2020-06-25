@@ -27,5 +27,20 @@ a {
   text-decoration: none;
 }
 
-html, body { height: 100%; }
-body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
+html,
+body {
+  height: 100%;
+}
+body {
+  margin: 0;
+  font-family: Roboto, 'Helvetica Neue', sans-serif;
+}
+
+input:-webkit-autofill,
+input:-webkit-autofill:hover,
+input:-webkit-autofill:focus,
+input:-webkit-autofill:active {
+  -webkit-box-shadow: 0 0 0px 1000px #2d2d2d inset !important;
+  -webkit-text-stroke-color: #e7e8eb !important;
+  -webkit-text-fill-color: rgba(0, 255, 255, 0.623) !important;
+}

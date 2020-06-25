@@ -8,7 +8,10 @@
 }
 
 .row {
+  width: 100%;
   display: flex;
+  justify-content: space-between;
+  padding: 0 5px;
 }
 
 .wrapper {
@@ -16,8 +19,8 @@
   z-index: 1;
   height: 100%;
   width: 100%;
-  background-color: #0000008a;
-  animation: showIn 0.5s ease-in forwards;
+  background-color: #000000bf;
+  animation: showIn 0.3s ease-in forwards;
 }
 
 form {
@@ -29,11 +32,21 @@ form {
   flex-direction: column;
   justify-content: center;
   align-items: center;
+  transition: 0.5s ease-in-out transform, 0.5s ease-in-out filter;
+}
+
+.form-switch {
+  transform: scale(1.1) translate(50%, -50%);
+  filter: saturate(50%);
 }
 
 form input,
 form button {
   margin: 20px;
+}
+
+input:-internal-autofill-selected {
+  background-color: transparent;
 }
 
 form input {
@@ -53,14 +66,48 @@ form input::placeholder {
 }
 
 form button {
-  width: 100px;
   height: 40px;
-  border-radius: 1px;
-  font-size: 20px;
   letter-spacing: 1px;
-  color: aquamarine;
   background-color: transparent;
   border: none;
   outline: none;
   cursor: pointer;
+}
+
+form button:disabled {
+  color: rgba(127, 255, 212, 0.575);
+  pointer-events: none;
+}
+
+.button-sumbit {
+  font-size: 20px;
+  color: rgba(127, 255, 212, 0.801);
+}
+
+.button-sumbit:hover {
+  text-shadow: 3px 3px 8px rgba(127, 255, 212, 0.644);
+}
+
+.button-switch {
+  font-size: 14px;
+  color: #9eaab59e;
+}
+
+.button-switch:hover {
+  text-shadow: 1px 1px 3px #9eaab5bd;
+}
+
+.info {
+  position: absolute;
+  margin-top: 145px;
+  width: 250px;
+  font-size: 14px;
+}
+
+.loading {
+  color: #7b7b7b;
+}
+
+.error {
+  color: #a16b6b;
 }

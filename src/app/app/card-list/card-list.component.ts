@@ -30,7 +30,7 @@ export class CardListComponent implements OnInit {
       this.searchValue = queryParams.search ? queryParams.search : '';
       this.page = queryParams.page ? queryParams.page : 0;
       this.cardsOnPage = queryParams.ps ? queryParams.ps : 10;
-      this.getCardList();
+      // this.getCardList();
     });
   }
 

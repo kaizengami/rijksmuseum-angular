@@ -1,10 +1,16 @@
 <div class="wrapper" #authWrapper>
-  <form #formDom #formData="ngForm" (ngSubmit)="onSubmit(formData)">
+  <form
+    #formDom
+    #formData="ngForm"
+    (ngSubmit)="onSubmit(formData)"
+    [ngClass]="{ 'form-switch': signupMode }"
+  >
     <input
       type="email"
       placeholder="Email"
       name="email"
       id="email"
+      required
       ngModel
       email
     />
@@ -12,12 +18,22 @@
       type="password"
       placeholder="Password"
       name="password"
+      minlength="6"
+      required
       ngModel
       password
     />
     <div class="row">
-      <button type="submit">Login</button>
-      <button type="button" (click)="handleSignup()">Sign up</button>
+      <button class="button-sumbit" type="submit" [disabled]="!formData.valid">
+        {{ signupMode ? 'Sign up' : 'Login' }}
+      </button>
+      <button class="button-switch" type="button" (click)="handleSwitchForm()">
+        {{ signupMode ? 'Login' : 'Sign up' }}
+      </button>
+    </div>
+    <div class="info">
+      <div *ngIf="loading" class="loading">Loading...</div>
+      <div *ngIf="error" class="error">{{ error }}</div>
     </div>
   </form>
 </div>

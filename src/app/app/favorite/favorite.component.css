@@ -1,0 +1,23 @@
+.cards-list {
+  position: relative;
+  flex-direction: column;
+  min-height: calc(100vh - 110px);
+  height: 100%;
+  width: 1042px;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-auto-rows: 200px;
+  margin: 0 auto;
+  padding-bottom: 110px;
+  transition: transform 1.5s ease-in-out, filter 1s linear;
+  animation-name: cards-list-render;
+  animation-duration: 0.3s;
+  animation-fill-mode: forwards;
+}
+
+.empty-list {
+  font-size: 30px;
+  color: #04070a;
+  margin-top: 100px;
+  text-align: center;
+}

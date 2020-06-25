@@ -1,0 +1,12 @@
+<div class="favorite-list">
+  <app-card-item
+    *ngFor="let card of cardList"
+    [title]="card.longTitle"
+    [backgroundUrl]="card.headerImage"
+    [id]="card.id"
+  ></app-card-item>
+
+  <div class="empty-list" *ngIf="cardList.length === 0">
+    Favorite list is empty
+  </div>
+</div>
