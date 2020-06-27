@@ -25,18 +25,11 @@ export class FavoriteComponent implements OnInit, OnDestroy {
   ) {}
   ngOnInit(): void {
     this.initFavorites();
-    // setTimeout(() => {
-    //   this.favoriteService.addFavorites(['123']);
-    // }, 3000);
+
     // this.favorites = this.favoriteService.favorites.get().subscribe((data) => {
     //   console.log(data.docs.map((doc) => doc.data()));
     // });
     // this.favorites.docs.map((doc) => doc.data());
-
-    // setTimeout(() => {
-    //   this.addFavorites();
-    // }, 3000);
-    // console.log(this.favorites);
   }
 
   initFavorites(): void {
