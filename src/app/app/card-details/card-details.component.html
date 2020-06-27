@@ -1,5 +1,16 @@
 <div class="card-ditails">
-  <h1>{{ cardDetails?.title }}</h1>
+  <div class="row">
+    <h1>{{ cardDetails?.title }}</h1>
+    <mat-icon
+      (click)="toggleFavorite()"
+      *ngIf="isAuthenticated"
+      class="favorite"
+      [ngClass]="{ 'favorite in-favorite': isInFavorite, favorite: true }"
+      aria-hidden="false"
+      aria-label="Example home icon"
+      >favorite</mat-icon
+    >
+  </div>
   <div class="row">
     <img [src]="cardDetails?.image" />
     <div class="description">

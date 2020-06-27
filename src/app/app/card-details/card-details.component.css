@@ -13,13 +13,14 @@ h1 {
   font-size: 28px;
   letter-spacing: 1px;
   color: #61efff;
-  text-shadow: #61efff 0px 0px 4px;
+  text-shadow: #61efff 0px 0px 2px;
   text-align: center;
   padding-bottom: 10px;
 }
 
 .row {
   display: flex;
+  justify-content: space-between;
 }
 
 img {
@@ -30,4 +31,23 @@ img {
 
 .description {
   padding: 0 20px;
+}
+
+.favorite {
+  color: #202731;
+  font-size: 34px;
+  cursor: pointer;
+}
+
+.favorite:hover {
+  color: #171d25;
+}
+
+.in-favorite {
+  color: #bf5050;
+  text-shadow: 0 0 5px;
+}
+
+.in-favorite:hover {
+  color: #833a3a;
 }

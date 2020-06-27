@@ -1,4 +1,7 @@
 <header>
+  <button [routerLink]="'/'" class="home">
+    <mat-icon aria-hidden="false" aria-label="Example home icon">home</mat-icon>
+  </button>
   <input
     type="text"
     placeholder="Search keyword..."
@@ -6,14 +9,13 @@
     (keyup.enter)="handleSubmit()"
   />
   <menu>
-    <button class="favorite" [routerLink]="'/favorite'">
+    <button *ngIf="isAuthenticated" class="favorite" [routerLink]="'/favorite'">
       <mat-icon aria-hidden="false" aria-label="Example home icon"
         >favorite</mat-icon
-      >
+      ><span>{{ favoritesAmount > 0 ? favoritesAmount : '' }}</span>
     </button>
     <button (click)="isAuthenticated ? handleLogout() : handleLogin()">
       {{ isAuthenticated ? 'Logout' : 'Login' }}
     </button>
   </menu>
 </header>
-<!-- favorite_border -->

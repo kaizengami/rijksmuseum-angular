@@ -1,6 +1,5 @@
 header {
   display: flex;
-  flex-direction: column;
   text-align: center;
   background-color: #232d39;
   box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
@@ -54,10 +53,25 @@ header button:hover {
   background-color: #1f2831;
 }
 
-header button:active {
-  font-size: 15px;
+header button:active,
+header button:active span {
+  transform: scale(0.98);
 }
 
 header .favorite {
   font-size: 35px;
+}
+
+.favorite span {
+  position: absolute;
+  font-size: 12px;
+  color: rgb(105, 180, 182);
+}
+
+header .favorite:hover span {
+  color: rgb(86, 148, 150);
+}
+
+header button.home {
+  border-right: 1px solid black;
 }

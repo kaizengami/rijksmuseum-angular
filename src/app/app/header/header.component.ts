@@ -8,6 +8,7 @@ import {
 import { ActivatedRoute, Router, Params } from '@angular/router';
 import { Subscription } from 'rxjs';
 import { AuthService } from '../auth/auth.service';
+import { FavoriteService } from '../favorite/favorite.service';
 
 @Component({
   selector: 'app-header',
@@ -19,16 +20,18 @@ export class HeaderComponent implements OnInit, OnDestroy {
   private userSub: Subscription;
   isAuthenticated = false;
   search = '';
+  favoritesAmount: number;
 
   constructor(
     private route: ActivatedRoute,
     private router: Router,
-    private authService: AuthService
+    private authService: AuthService,
+    private favoriteService: FavoriteService
   ) {}
 
   ngOnInit(): void {
     this.updateSearchInputFromUrl();
-
+    this.initFavorites();
     this.userSub = this.authService.user.subscribe((user) => {
       this.isAuthenticated = !!user;
     });
@@ -59,8 +62,13 @@ export class HeaderComponent implements OnInit, OnDestroy {
   }
 
   handleLogout(): void {
-    console.log('handleLogout');
     this.authService.logout();
+  }
+
+  initFavorites(): void {
+    this.favoriteService.favorites.subscribe((favorites) => {
+      this.favoritesAmount = favorites.length;
+    });
   }
 
   ngOnDestroy(): void {
